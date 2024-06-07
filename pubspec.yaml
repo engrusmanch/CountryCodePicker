@@ -12,10 +12,12 @@ dependencies:
   flutter:
     sdk: flutter
   collection: ^1.15.0
+  flutter_svg: ^2.0.10+1
 
 flutter:
   assets:
     - flags/
+    - flags/svg/
     - packages/country_code_picker/src/i18n/af.json
     - packages/country_code_picker/src/i18n/am.json
     - packages/country_code_picker/src/i18n/ha.json

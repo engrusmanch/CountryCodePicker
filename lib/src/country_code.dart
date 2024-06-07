@@ -19,12 +19,14 @@ class CountryCode {
 
   /// the dial code (+39,+93..)
   final String? dialCode;
+  final String? svgFlagUri;
 
   CountryCode({
     this.name,
     this.flagUri,
     this.code,
     this.dialCode,
+    this.svgFlagUri
   });
 
   @Deprecated('Use `fromCountryCode` instead.')
@@ -57,6 +59,7 @@ class CountryCode {
       code: json['code'],
       dialCode: json['dial_code'],
       flagUri: 'flags/${json['code'].toLowerCase()}.png',
+      svgFlagUri:'flags/svg/${json['code'].toLowerCase()}.svg'
     );
   }
 

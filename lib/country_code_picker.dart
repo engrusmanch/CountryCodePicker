@@ -2,6 +2,7 @@ library country_code_picker;
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'src/country_code.dart';
 import 'src/country_codes.dart';
@@ -127,7 +128,8 @@ class CountryCodePicker extends StatefulWidget {
     this.dialogBackgroundColor,
     this.closeIcon = const Icon(Icons.close),
     this.countryList = codes,
-    this.dialogItemPadding = const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+    this.dialogItemPadding =
+        const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
     this.searchPadding = const EdgeInsets.symmetric(horizontal: 24),
     Key? key,
   }) : super(key: key);
@@ -197,11 +199,11 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                     margin: widget.alignLeft
                         ? const EdgeInsets.only(right: 16.0, left: 8.0)
                         : const EdgeInsets.only(right: 16.0),
-                    child: Image.asset(
-                      selectedItem!.flagUri!,
-                      package: 'country_code_picker',
-                      width: widget.flagWidth,
-                    ),
+                    child: SvgPicture.asset(
+                            selectedItem!.svgFlagUri!,
+                            package: 'country_code_picker',
+                            width: widget.flagWidth,
+                          ),
                   ),
                 ),
               if (!widget.hideMainText)
